@@ -1,4 +1,3 @@
-],
 <?php
     include_once "util.php";
 
@@ -23,7 +22,7 @@
     <div class="row">
       <div class="col l10 push-l1 z-depth-2">
         <div class="row textCenter">
-          <h1>Fortnight🍂🦔</h1>
+          <h1>Fortnight</h1>
           <input type='text' id='name' name='name' placeholder='name'>
           <h5>press space to jump</h5>
         </div>
@@ -44,7 +43,7 @@
   </div>
   <div class="row">
     <div class="col l4 push-l4">
-      <h3>lukajda update: vsechno je lepscejsi a freshejsi</h3>
+      <h3>update: vsechno je lepscejsi a freshejsi</h3>
     </div>
   </div>
   <div id="border" class="container">
@@ -67,6 +66,7 @@
 
 
   <script>
+    // console.log("scoreDB");
     var character = document.getElementById("character");
     var block = document.getElementById("block");
     var counter=0;
@@ -93,15 +93,17 @@
         if (dead) return;
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
         let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-
+        
 
         if(blockLeft<20 && blockLeft>-20 && characterTop>=130) {
             block.style.animation = "none";
             dead = true;
 
             var scoreDB = Math.floor(counter/70);
+
+            console.log(scoreDB);
             $.post("xhr-action.php", {'score': scoreDB, 'name': document.getElementById("name").value}).done(function(data){
-              // console.log("data: ", data);
+              console.log("data: ", data);
             });
 
             $.get("xhr-action.php").done(

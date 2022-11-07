@@ -140,7 +140,7 @@ body {
 	background-color: #eeeeee;
 	background-image: url(<?php global $bg_url; echo $bg_url; ?>);
 	background-size: cover;
-	margin-top: 20px;
+	<!-- margin-top: 20px; -->
 }
 
 #name {
