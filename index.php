@@ -87,7 +87,8 @@
     }
 
 
-    document.getElementById("game").addEventListener("click", jump); 
+    document.getElementById("game").addEventListener("click", jump);
+	document.getElementById("game").addEventListener("keydown", jump);
 
     var checkDead = setInterval(function() {
         if (dead) return;
